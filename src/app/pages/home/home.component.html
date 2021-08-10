@@ -1,0 +1,41 @@
+<p>home works!</p>
+
+<mat-card style="width: 400px; margin-left: 10px;">
+    <mat-card-title>Ng-Model</mat-card-title>
+    <mat-card-content>
+        <div>
+        <h3 for="nombre-ngModel">Nombre: {{nombre |titlecase}} </h3>
+        <input [(ngModel)]="nombre"/>
+        <mat-icon style="color: greenyellow;" *ngIf="nombre; else iconWarning">check</mat-icon>
+        <ng-template #iconWarning>
+            <mat-icon style="color: rgba(255, 0, 0, 0.719);">warning</mat-icon>
+        </ng-template>
+    </div>
+    <div> 
+        <h3 for="apellido-ngModel">Apellido: {{apellido}} </h3>
+        <input [(ngModel)]="apellido"/>
+        <mat-icon style="color: greenyellow;" *ngIf="apellido; else iconWarning">check</mat-icon></div>
+    <div>
+        <h3 for="edad-ngModel">Edad: {{edad}} </h3>
+        <input [(ngModel)]="edad"/>
+        <mat-icon style="color: greenyellow;" *ngIf="edad!=0; else iconWarning">check</mat-icon>
+    </div>
+    <div>
+        <h3 for="genero-ngModel">Genero: {{genero}} </h3>
+        <input [(ngModel)]="genero"/>
+        <mat-icon style="color: greenyellow;" *ngIf="genero; else iconWarning">check</mat-icon>
+    </div>
+    </mat-card-content>
+</mat-card>
+<hr>
+<mat-card style="width: 400px; margin-left: 10px;">
+    <mat-card-title>Ng-Class</mat-card-title>
+    <mat-card-content>
+        <div [ngClass]="currentClass">Texto de prueba</div>
+        <div [ngClass]="currentClassArray">Texto de prueba</div>
+        
+        <div [ngStyle]="specialStyle"> Special text</div>
+        <button (click)="changeSpecialStyle()">Change Special Style</button>
+    </mat-card-content>
+</mat-card>
+
